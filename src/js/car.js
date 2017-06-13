@@ -49,8 +49,6 @@ require(['config'],function(){
 
 		}))
 
-
-
 		// 统计商品种类
 		function time(){
 			var shuL = $('.shuL');
@@ -59,9 +57,6 @@ require(['config'],function(){
 		}
 		time();
 		
-
-
-
 		jinE.html(`商品总金额总计:<strong>${totalPrice.toFixed(2)}<strong/>`);
 
 		jinE_x.html(`商品总金额总计:<strong>${totalPrice.toFixed(2)}<strong/>`);
