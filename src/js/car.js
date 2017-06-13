@@ -52,9 +52,13 @@ require(['config'],function(){
 
 
 		// 统计商品种类
-		var shuL = $('.shuL');
-		var car_m = $('.car_m');
-		shuL.html(car_m.length);
+		function time(){
+			var shuL = $('.shuL');
+			var car_m = $('.car_m');
+			shuL.html(car_m.length);
+		}
+		time();
+		
 
 
 
@@ -101,10 +105,17 @@ require(['config'],function(){
 		// 商品减事件
 		biao.on('click','.jian',function(){
 			var inp = $(this).next();
+
+			if(inp.val()<=1){
+				inp.val() = 1;
+			}
+
 			var a = inp.val();
 			var arr = inp.val(a-1);
 			var shu = a-1;
 			
+
+
 			var fu = $(this).parent().parent();
 
 			var id = fu.attr('id');
@@ -174,6 +185,7 @@ require(['config'],function(){
 			// 删除DOM节点
 			tr.remove();
 			// jinE.html('');
+			time();
 			// setTotal();
 			jinE.html(`商品总金额总计:<strong>${totalPrice - qian.html()}<strong/>`);
 			jinE_x.html(`商品总金额总计:<strong>${totalPrice - qian.html()}<strong/>`);

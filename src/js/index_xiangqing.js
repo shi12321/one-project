@@ -63,21 +63,6 @@ require(['config'],function(){
 
 						zhong.on('click','.jia',function(){
 							++shu.value;
-							
-							// var fus = $(this).parent().parent().prev();
-							
-							// var imgs = fus.children().eq(1).find('img');
-							// cloneImgs = copyImg.clone();
-							
-							// cloneImgs.css({
-						    //  position:'absolute',
-						    //  left:imgs.offset().left,
-			       			//  top:imgs.offset().top ,
-						    //  width:380,
-						    //  height:380,
-						    //  }).appendTo('body');
-			               
-			                // fei();
 						})
 
 						zhong.on('click','.jian',function(){
@@ -85,15 +70,7 @@ require(['config'],function(){
 							
 							if(shu.value <= 1){
 								shu.value = 1;
-							}
-							
-							
-							// cloneImgs = $(this).closest('body').children('img');
-							// fei();
-							
-							// if(cloneImgs){
-							// 	cloneImgs[cloneImgs.length-1].remove();
-							// }		
+							}		
 						})
 						
 						
@@ -129,7 +106,6 @@ require(['config'],function(){
 			                   // 删除动画图片
 			                   cloneImgs02.remove();
 			                });   
-							// car_r_s[0].innerHTML = val;
 
 							// 把数据利用cookie传到购物车页面
 							

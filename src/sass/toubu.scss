@@ -29,11 +29,13 @@ a{text-decoration:none;}
 	.top1{height:37px;background-color:#F2F2F2;width:100%;color:#6C6C6C;line-height:37px;
 		label{padding-left:45px;font-size:14px;float:left;}
 		input{height:20px;width:148px;color:#6c6c6c;float:left;margin-top:7px;}
-		.list-l{float:left;margin-left:14px;font-size:14px;color:#6c6c6c;
+		.list-l{float:left;margin-left:14px;font-size:14px;color:#6c6c6c;position:relative;width:200px;height:37px;
 			li{float:left;
 				a{color:#6c6c6c;display:block;margin-left:8px;}
 				a:hover{color:#FC4C65;}
 			}
+			span{display:block;position:absolute;}
+			.tui{left:150px;}
 		}
 		.list-r{float:right;font-size:14px;color:#6c6c6c;margin-right:36px;
 			li{float:left;position:relative;
