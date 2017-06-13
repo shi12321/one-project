@@ -132,9 +132,13 @@ a { text-decoration: none; }
 
 #car .container .car_z .car_z_03 .list .yi .jinE { display: inline-block; padding-left: 520px; }
 
+#car .container .car_z .car_z_03 .list .yi .jinE strong { color: red; font-size: 16px; }
+
 #car .container .car_z .car_z_03 .list .er { width: 985px; padding-left: 850px; box-sizing: border-box; font-size: 12px; }
 
 #car .container .car_z .car_z_03 .list .san { width: 985px; padding-left: 765px; box-sizing: border-box; font-size: 12px; }
+
+#car .container .car_z .car_z_03 .list .san .san_jinE strong { color: red; font-size: 16px; }
 
 #car .container .car_z .car_z_03 .list .si { position: relative; height: 50px; }
 

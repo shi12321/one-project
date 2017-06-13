@@ -95,11 +95,15 @@ a{text-decoration:none;}
 					input{width:90px;margin-right:10px;}
 					.pi{display:inline-block;width:120px;text-align:center;}
 					.jinE{display:inline-block;padding-left:520px;
-						.jinE_s{}
+						strong{color:red;font-size:16px;}
 					}
 				}
 				.er{width:985px;padding-left:850px;box-sizing:border-box;font-size:12px;}
-				.san{width:985px;padding-left:765px;box-sizing:border-box;font-size:12px;}
+				.san{width:985px;padding-left:765px;box-sizing:border-box;font-size:12px;
+					.san_jinE{
+						strong{color:red;font-size:16px;}
+					}
+				}
 				.si{position:relative;height:50px;
 					.si_01{position:absolute;bottom:0px;right:200px;}
 					.btn_01{width:115px;height:30px;background-color:#FC4C65;border:0;position:absolute;bottom:12px;right:50px;}

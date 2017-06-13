@@ -83,8 +83,8 @@ require(['config'],function(){
 						zhong.on('click','.jian',function(){
 							--shu.value;
 							
-							if(shu.value <= 0){
-								shu.value = 0;
+							if(shu.value <= 1){
+								shu.value = 1;
 							}
 							
 							
@@ -131,29 +131,34 @@ require(['config'],function(){
 			                });   
 							// car_r_s[0].innerHTML = val;
 
-
-							
 							// 把数据利用cookie传到购物车页面
 							
 							var now = new Date();
+							
 							now.setDate(now.getDate() + 7);
-
 
 							var val = shu.value;
 
+							for(var i=0;i<goodslist.length;i++){
+								if(goodslist[i].id === res){
+									goodslist[i].val = goodslist[i].val*1 + val*1;
+									break;
+								}
+							}
+							
+							if(i===goodslist.length){
+								var goods = {
+									imgurl:item.imgurl,
+									name:item.name,
+									price:item.price,
+									num:item.num,
+									val:val,
+									id:item.id,
+								};
 
-							var goods = {
-								imgurl:item.imgurl,
-								name:item.name,
-								price:item.price,
-								num:item.num,
-								val:val,
-								id:item.id,
-							};
-							// goodslist = getCookie(goodslist );
-
-							goodslist.push(goods);
-	
+								goodslist.push(goods);
+							}
+						
 							// 设置cookie
 							setCookie('goodslist',JSON.stringify(goodslist),now.toUTCString());
 						})
