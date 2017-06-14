@@ -11,8 +11,8 @@ require(['config'],function(){
 
 		goodslist = goodslist ? JSON.parse(goodslist) : [];
 
+		
 		var totalPrice = 0;
-
 		biao.html(goodslist.map(function(goods){
 
 	 		totalPrice += goods.price*goods.val;
@@ -57,13 +57,11 @@ require(['config'],function(){
 		}
 		time();
 		
-		jinE.html(`商品总金额总计:<strong>${totalPrice.toFixed(2)}<strong/>`);
+		jinE.html(`商品总金额总计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
 
-		jinE_x.html(`商品总金额总计:<strong>${totalPrice.toFixed(2)}<strong/>`);
+		jinE_x.html(`商品总金额总计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
 		
-
 		// 点击加减事件
-		
 		biao.on('click','.jia',function(){
 			var inp = $(this).prev();
 			var a = inp.val();
@@ -91,14 +89,29 @@ require(['config'],function(){
 			
 			xj.html((dan_j*shu).toFixed(2));
 
-			setTotal();
+			var totalPrice = 0; 
+            biao.children().each(function(){
+                var t = $(this).find('.t').val();
+                var p = $(this).find('.dan_price_x').text();
+                console.log($(this))
+                if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){  
+                    t=0;  
+                }  
+                console.log(parseInt(t))
+			console.log(parseInt(p))
 
+                totalPrice += parseInt(t) * parseFloat(p);  
+            });  
+            jinE.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
+            jinE_x.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);  
+			
+			console.log(totalPrice)
+			
 		})
-
-
 
 		// 商品减事件
 		biao.on('click','.jian',function(){
+
 			var inp = $(this).next();
 
 			if(inp.val()<=1){
@@ -109,8 +122,6 @@ require(['config'],function(){
 			var arr = inp.val(a-1);
 			var shu = a-1;
 			
-
-
 			var fu = $(this).parent().parent();
 
 			var id = fu.attr('id');
@@ -133,28 +144,26 @@ require(['config'],function(){
 			
 			xj.html((dan_j*shu).toFixed(2));
 
-			setTotal();
+			var totalPrice = 0; 
+
+			biao.children().each(function(){
+                var t = $(this).find('.t').val();
+                var p = $(this).find('.dan_price_x').text();
+                if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){  
+                    t=0;  
+                }  
+
+                totalPrice += parseInt(t) * parseFloat(p); 
+            });  
+            jinE.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
+            jinE_x.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);  
+			
+			console.log(totalPrice)
 			
 		})
-
-		// 封装总价格，用于加减按钮
-		function setTotal() {  
-                var totalPrice = 0;  
-                biao.children().each(function() {
-                    var t = $(this).find('.t').val();
-                    var p = $(this).find('.dan_price').text();
-                    if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){  
-                        t=0;  
-                    }  
-
-                    totalPrice += parseInt(t) * parseFloat(p);  
-                });  
-                jinE.html(`商品总金额共计:<strong>${totalPrice.toFixed(2)}<strong/>`);
-                jinE_x.html(`商品总金额共计:<strong>${totalPrice.toFixed(2)}<strong/>`);  
-          }  
          
 
-		 // 删除单个商品
+		// 删除单个商品
 		biao.on('click','.shan',function(){
 
 			var tr = $(this).parent().parent();
@@ -164,6 +173,10 @@ require(['config'],function(){
 			var tr = $(this).parent().parent();
 
 			var id = tr.attr('id');
+
+			var zong = $(this).closest('div').next().find('.zong').html();
+
+			var zongjia = parseInt(zong);
 
 			for(var i=0;i<goodslist.length;i++){
 				if(goodslist[i].id === id){
@@ -177,13 +190,22 @@ require(['config'],function(){
 					break;
 				}
 			}
-			// 删除DOM节点
-			tr.remove();
-			// jinE.html('');
+			
 			time();
-			// setTotal();
-			jinE.html(`商品总金额总计:<strong>${totalPrice - qian.html()}<strong/>`);
-			jinE_x.html(`商品总金额总计:<strong>${totalPrice - qian.html()}<strong/>`);
+
+			biao.children().each(function(){
+                
+                var p = $(this).find('.duo_price').find('strong').text();
+               
+                totalPrice = zongjia - p;  
+                
+            });  
+            jinE.html(`商品总金额共计:<strong>${totalPrice.toFixed(2)}<strong/>`);
+            jinE_x.html(`商品总金额共计:<strong>${totalPrice.toFixed(2)}<strong/>`);
+
+			// 删除DOM节点
+			$(this).parent().parent().parent().parent().remove();
+
 		})
 	})
 })
