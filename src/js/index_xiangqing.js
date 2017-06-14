@@ -4,6 +4,7 @@ require(['config'],function(){
 		var zuo = $('.zuo');
 		var zhong = $('.zhong');
 		var you = $('.you');
+		var floor3 = $('.floor3');
 		var res = location.search.slice(1);
 		$.ajax({
 			url:'../api/list.php',
@@ -45,7 +46,9 @@ require(['config'],function(){
 								<span class="btn1"><strong>立即购买</strong></span>
 								<span class="btn2"><strong>加入购物车</strong></span>
 							</form>`);
-						you.html(`<img src="../img/xianger.png" alt="">`)
+						you.html(`<img src="../img/xianger.png" alt="">`);
+
+						floor3.html(`<img src="../img/floor4.png" alt="">`)
 
 						// 加入购物车效果
 						// var btn2 = $('.btn2');
@@ -195,7 +198,7 @@ require(['config'],function(){
 			arr.forEach(function(item){
 				var temp = item.split('=');
 				if(temp[0] === 'username'){
-					list.html (temp[1] + '，欢迎登录国家安全系统，<button class="tuichu">退出</button>');
+					list.html (temp[1] + '，欢迎登录国家安全系统 <button class="tuichu">退出</button>');
 				}
 			});
 		}else{

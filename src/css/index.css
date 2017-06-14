@@ -30,7 +30,7 @@ a { text-decoration: none; }
 
 #top .container-zdy .top1 input { height: 20px; width: 148px; color: #6c6c6c; float: left; margin-top: 7px; }
 
-#top .container-zdy .top1 .list-l { float: left; margin-left: 14px; font-size: 14px; color: #6c6c6c; position: relative; width: 230px; height: 37px; }
+#top .container-zdy .top1 .list-l { float: left; margin-left: 14px; font-size: 14px; color: #6c6c6c; position: relative; height: 37px; }
 
 #top .container-zdy .top1 .list-l li { float: left; }
 

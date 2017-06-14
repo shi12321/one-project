@@ -17,7 +17,7 @@ require(['config'],function(){
 			arr.forEach(function(item){
 				var temp = item.split('=');
 				if(temp[0] === 'username'){
-					list.html (temp[1] + '，欢迎登录国家安全系统，<button class="tuichu">退出</button>');
+					list.html (temp[1] + '，欢迎登录国家安全系统 <button class="tuichu">退出</button>');
 				}
 			});
 		}else{

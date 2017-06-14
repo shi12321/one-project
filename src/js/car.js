@@ -20,7 +20,7 @@ require(['config'],function(){
 			return `<table>
 				<tr id="${goods.id}" class="car_m">
 					<td class="inp">
-						<input type="checkbox" class="inp_x" checked />
+						<input type="checkbox" class="inp_x" checked  style = "display:none;" />
 					</td>
 					<td class="tus clearfix">
 						<div class="img">
@@ -93,7 +93,7 @@ require(['config'],function(){
             biao.children().each(function(){
                 var t = $(this).find('.t').val();
                 var p = $(this).find('.dan_price_x').text();
-                console.log($(this))
+                
                 if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){  
                     t=0;  
                 }  
@@ -112,7 +112,7 @@ require(['config'],function(){
 			var inp = $(this).next();
 
 			if(inp.val()<=1){
-				inp.val() = 1;
+				inp.val() = '1';
 			}
 
 			var a = inp.val();
@@ -213,7 +213,7 @@ require(['config'],function(){
 			arr.forEach(function(item){
 				var temp = item.split('=');
 				if(temp[0] === 'username'){
-					list.html (temp[1] + '，欢迎登录国家安全系统，<button class="tuichu">退出</button>');
+					list.html (temp[1] + '，欢迎登录国家安全系统 <button class="tuichu">退出</button>');
 				}
 			});
 		}else{
