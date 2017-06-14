@@ -97,17 +97,14 @@ require(['config'],function(){
                 if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){  
                     t=0;  
                 }  
-                console.log(parseInt(t))
-			console.log(parseInt(p))
 
                 totalPrice += parseInt(t) * parseFloat(p);  
             });  
             jinE.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
             jinE_x.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);  
-			
-			console.log(totalPrice)
-			
 		})
+
+
 
 		// 商品减事件
 		biao.on('click','.jian',function(){
@@ -157,9 +154,6 @@ require(['config'],function(){
             });  
             jinE.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
             jinE_x.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);  
-			
-			console.log(totalPrice)
-			
 		})
          
 

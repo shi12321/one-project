@@ -58,15 +58,14 @@ require(['config'],function(){
 							<div class="caption">
 								<h3>${item.name}</h3>
 								<p class="price">价格：${item.price}</p>
-								<p>
-									<a href="#" class="btn btn-primary btn-xs">添加购物车</a>
-								</p>
+							
 							</div>
 						</div>
 					</div>
-				`
+					`
 			}).join('');
 			$goodslist.html(html);
+
 			// 传递数据
 			var lie_r = $('.lie_r');
 			lie_r.on('click','div>img',function(){console.log($(this).closest('div').attr('id'))
