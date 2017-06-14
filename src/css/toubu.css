@@ -30,7 +30,7 @@ a { text-decoration: none; }
 
 #top .container-zdy .top1 input { height: 20px; width: 148px; color: #6c6c6c; float: left; margin-top: 7px; }
 
-#top .container-zdy .top1 .list-l { float: left; margin-left: 14px; font-size: 14px; color: #6c6c6c; position: relative; width: 200px; height: 37px; }
+#top .container-zdy .top1 .list-l { float: left; margin-left: 14px; font-size: 14px; color: #6c6c6c; position: relative; width: 230px; height: 37px; }
 
 #top .container-zdy .top1 .list-l li { float: left; }
 
@@ -169,6 +169,8 @@ a { text-decoration: none; }
 #hot .container-zdy .hot-x .hot-r .hot-r-x .wang { color: #333333; font-size: 12px; margin-top: 20px; margin-left: 10px; }
 
 #hot .container-zdy .hot-x .hot-r .hot-r-x .wang-x { font-size: 12px; color: #333333; line-height: 20px; width: 350px; margin-left: 10px; }
+
+#hot .container-zdy .hot-x .hot-r .hot-r-x:hover { box-shadow: 0 0 10px 2px #ccc; }
 
 #hot .container-zdy .hot-x .hot-l { width: 791px; height: 685px; position: absolute; top: 65px; left: 453px; background-color: #FAFAFA; }
 

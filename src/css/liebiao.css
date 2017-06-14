@@ -38,6 +38,8 @@ a { text-decoration: none; }
 
 #top .container-zdy .top1 .list-l li a:hover { color: #FC4C65; }
 
+#top .container-zdy .top1 .list-l .tuichu { border: 1px solid #ccc; }
+
 #top .container-zdy .top1 .list-r { float: right; font-size: 14px; color: #6c6c6c; margin-right: 36px; }
 
 #top .container-zdy .top1 .list-r li { float: left; position: relative; }
