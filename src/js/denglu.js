@@ -23,6 +23,7 @@ require(['config'],function(){
 						
 						// 把用户名存入cookie
 						document.cookie = str1;
+						// setCookie('user',str1,now.toUTCString());
 				
 						location.href = 'index.html';
 

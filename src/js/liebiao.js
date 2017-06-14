@@ -73,7 +73,6 @@ require(['config'],function(){
 		}
 
 
-		// 利用cookie登录
 		var list = $('.list-l');
 
 		var cookies = document.cookie;
@@ -85,6 +84,10 @@ require(['config'],function(){
 				var temp = item.split('=');
 				if(temp[0] === 'username'){
 					list.html (temp[1] + '，欢迎登录国家安全系统 <span class="tuichu">退出</span>');
+				}else{
+					list.html(`<li class="a">欢迎来到风尚购物</li>
+					<li class="deng"><a href="denglu.html">登录</a></li>
+					<li class="zhu"><a href="zhuce.html">注册</a></li>`);
 				}
 			});
 		}else{
