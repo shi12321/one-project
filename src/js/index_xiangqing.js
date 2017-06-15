@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery'],function($){
+	require(['jquery','common'],function($,common){
 		var xiang = $('#xiang');
 		var zuo = $('.zuo');
 		var zhong = $('.zhong');
@@ -48,7 +48,7 @@ require(['config'],function(){
 							</form>`);
 						you.html(`<img src="../img/xianger.png" alt="">`);
 
-						floor3.html(`<img src="../img/floor4.png" alt="">`)
+						
 
 						// 加入购物车效果
 						// var btn2 = $('.btn2');

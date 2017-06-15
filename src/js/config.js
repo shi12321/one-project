@@ -4,6 +4,11 @@ require.config({
 	urlArgs: 'v='+ Date.now(),
 	paths:{
 		'jquery':'../lib/jquery-3.2.1',
-		// 'denglu':'../lib/denglu',
+		'banner':'../lib/banner',
+		'common':'../lib/common',
+	},
+	shim:{
+		'banner':['jquery'],
+		'common':['jquery'],
 	}
 })

@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery'],function($){
+	require(['jquery','common'],function($,common){
 		
 		var biao = $('.car_z_02');
 		
@@ -167,7 +167,7 @@ require(['config'],function(){
 			var id = tr.attr('id');
 
 			var zong = $(this).closest('.car_z_02').next().find('.zong').html();
-console.log($(this).closest('.car_z_02').next().find('.zong'))
+
 			var zongjia = parseInt(zong);
 
 			for(var i=0;i<goodslist.length;i++){
@@ -182,15 +182,11 @@ console.log($(this).closest('.car_z_02').next().find('.zong'))
 					break;
 				}
 			}
-			
-			
-			biao.children().each(function(){
-                
-                var p = $(this).find('.duo_price').find('strong').text();
-               
-                totalPrice = zongjia - p;  
-                
-            });  
+
+            var p = $(this).parent().prev().find('strong').text();
+           
+            totalPrice = zongjia - p;  
+
             jinE.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
             jinE_x.html(`商品总金额共计:<strong class="zong">${totalPrice.toFixed(2)}<strong/>`);
 

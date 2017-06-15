@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery'],function($){
+	require(['jquery','banner'],function($,banner){
 		var quan = $('#quan');
 		quan.on('click','div>img',function(){
 			location.href = '../html/xiangqing.html?' + $(this).closest('div').attr('id');
@@ -12,9 +12,9 @@ require(['config'],function(){
 		
 		if(cookies){
 			var arr = cookies.split('; ');
-var idx = 0;
+
 			arr.forEach(function(item){
-				var temp = item.split('=');idx++;console.log(temp[0],idx)
+				var temp = item.split('=');
 				if(temp[0] === 'username'){
 					list.html (temp[1] + '，欢迎登录国家安全系统 <button class="tuichu">退出</button>');
 				}
